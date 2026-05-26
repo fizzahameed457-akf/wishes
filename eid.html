@@ -1,0 +1,707 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            width: 100%;
+            background-color: rgb(26, 140, 141);
+        }
+        .moon {
+            position: absolute;
+            top: 90px;
+            left: 120px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border-left: 10px solid;
+            color: white;
+            transform: rotate(-30deg);
+        }
+
+        img {
+            margin-top: 17%;
+        }
+
+        strong{
+            font-weight: bold;
+        }
+        .outer-container{
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        .container{
+            width: 100%;
+            margin: 0 auto;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        p{
+            color: white;
+        }
+        .main-text{
+            position: relative;
+        }
+        .top p, .bottom p{
+            line-height: 1;
+            margin: 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 72px;
+            letter-spacing: 50px;
+            position: absolute;
+            width: 100%;
+        } 
+        .top, .bottom{
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            position: relative;
+            animation-duraton: 1s;
+            animation-fill-mode: forwards;
+            animation-delay: 1s; 
+        }
+        .bottom p{
+            bottom: 0px;
+        }
+        .top{
+            height: 32px;
+            animation-name: goUp
+        }
+        .bottom{
+            height: 41px;
+            animation-name: goDown;
+        }
+        .subtext p{
+            text-align: center;
+            font-size: 24px;
+            line-height: 1;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-70%);
+            opacity: 0;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-delay: 2s;
+        }
+        @keyframes goUp{
+            0%{
+                transform: translateY(0);
+            }
+            100%
+            {
+                transform: translateY(-22px);
+            }
+
+        }
+        @keyframes goDown{
+            0%{
+                transform: translateY(0);
+            }
+            100%
+            {
+                transform: translateY(22px);
+            }
+        }
+        @keyframes fadeIn{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="moon"></div>
+
+    <div class="mosque">
+        <img src="mosque.png" alt="mosque">
+    </div>
+
+    <div class="outer-container">
+        <div class="container">
+            <div class="main-text">
+                <div class="top">
+                    <p>EID</p>
+                </div>
+
+                <div class="bottom">
+                    <p>EID</p>
+                </div>
+                <div class="subtext">
+                    <p>ul Azha Mubarak</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Generate twinkling stars
+        window.addEventListener('DOMContentLoaded', () => {
+            const numStars = 200;
+            const sky = document.createElement('div');
+            sky.style.position = 'fixed';
+            sky.style.inset = '0';
+            sky.style.pointerEvents = 'none';
+            sky.style.zIndex = '-1';
+            document.body.appendChild(sky);
+
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                const size = Math.random() * 3 + 1;
+                Object.assign(star.style, {
+                    position: 'absolute',
+                    width: size + 'px',
+                    height: size + 'px',
+                    backgroundColor: 'white',
+                    borderRadius: '50%',
+                    left: Math.random() * window.innerWidth + 'px',
+                    top: Math.random() * window.innerHeight + 'px',
+                    animation: `twinkle ${Math.random() * 3 + 2}s infinite`,
+                    animationDelay: Math.random() * 3 + 's'
+                });
+                sky.appendChild(star);
+            }
+        });
+    </script>
+
+    <style>
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+    </style>
+</body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            width: 100%;
+            background-color: rgb(26, 140, 141);
+        }
+        strong{
+            font-weight: bold;
+        }
+        .outer-container{
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        .container{
+            width: 100%;
+            margin: 0 auto;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        p{
+            color: white;
+        }
+        .main-text{
+            position: relative;
+        }
+        .top p, .bottom p{
+            line-height: 1;
+            margin: 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 72px;
+            letter-spacing: 50px;
+            position: absolute;
+            width: 100%;
+        } 
+        .top, .bottom{
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            position: relative;
+            animation-duraton: 1s;
+            animation-fill-mode: forwards;
+            animation-delay: 1s; 
+        }
+        .bottom p{
+            bottom: 0px;
+        }
+        .top{
+            height: 32px;
+            animation-name: goUp
+        }
+        .bottom{
+            height: 41px;
+            animation-name: goDown;
+        }
+        .subtext p{
+            text-align: center;
+            font-size: 24px;
+            line-height: 1;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-70%);
+            opacity: 0;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-delay: 2s;
+        }
+        @keyframes goUp{
+            0%{
+                transform: translateY(0);
+            }
+            100%
+            {
+                transform: translateY(-22px);
+            }
+
+        }
+        @keyframes goDown{
+            0%{
+                transform: translateY(0);
+            }
+            100%
+            {
+                transform: translateY(22px);
+            }
+        }
+        @keyframes fadeIn{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="outer-container">
+        <div class="container">
+            <div class="main-text">
+                <div class="top">
+                    <p>EID</p>
+                </div>
+
+                <div class="bottom">
+                    <p>EID</p>
+                </div>
+                <div class="subtext">
+                    <p>ul Azha Mubarak</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid ul Azha Mubarak</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            background-color: rgb(6, 57, 105);   /* deep night blue */
+        }
+
+        /*Lanterns*/
+          .lantern-container {
+                position: relative;
+                width: 70%;
+                height: 60px;
+                margin-left: 15%;
+            }
+
+            @keyframes flicker {
+                0%, 100% { opacity: 0.8; transform: scaleY(1); }
+                50% { opacity: 1; transform: scaleY(1.15); }
+            }
+
+            @keyframes sway {
+                0%, 100% { transform: rotate(-3deg); }
+                50% { transform: rotate(3deg); }
+            }
+
+        /* ===== Moon ===== */
+        .moon {
+            position: absolute;
+            top: 20px;
+            left: 70px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border-left: 10px solid #f5e3b2;
+            transform: rotate(-50deg);
+        }
+
+        /* ===== Mosque image ===== */
+        /*.mosque {
+                position: absolute;
+                bottom: 8%;         
+                left: 27.5%;
+                transform: translateX(-50%);
+                z-index: 2;
+                width: 70%;
+                text-align: center;
+        }
+        .mosque img {
+            width: 100%;
+            max-width: 750px;       
+            height: auto;
+            display: inline-block;
+            margin: 0;
+        }*/
+        .mosque {
+            position: absolute;
+            bottom: 90px;            /* grass height (same as .grass) */
+            left: 0;               /* distance from left edge scales with screen width */
+            width: 60%;              /* fluid width – adjust to your liking */
+            max-width: 550px;        /* caps size on large screens */
+            z-index: 2;
+            text-align: left;        /* align image to the left */
+        }
+
+        .mosque img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0;
+        }
+
+
+        /*====Grass====*/
+        .grass {
+             position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 90px;                /* Adjust height as needed */
+                background: linear-gradient(to bottom, #3a8c3f, #2e7d32);            /* above stars, below mosque/sheep if needed */
+        }
+
+        /* ===== Greeting container ===== */
+        /* ========== Greeting (split/merge) ========== */
+        .main-text {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .top, .bottom {
+            width: 100%;
+            overflow: hidden;
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        .top    { height: 32px; transform: translateY(0); }
+        .bottom { height: 41px; transform: translateY(0); }
+
+        .main-text.split .top    { transform: translateY(-22px); }
+        .main-text.split .bottom { transform: translateY(22px); }
+
+        .top p, .bottom p {
+            position: absolute; width: 100%; margin: 0;
+            font-size: 72px; font-weight: bold; line-height: 1;
+            letter-spacing: 20px; color: #f5e3b2;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+            text-align: center;
+        }
+        .top p { top: 0; }
+        .bottom p { bottom: 0; }
+
+        .subtext {
+            position: absolute; width: 100%; top: 50%; left: 0;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            display: flex; flex-direction: column; align-items: center; gap: 6px;
+        }
+        .main-text.split .subtext { opacity: 1; }
+
+        .subtext p {
+            margin: 0; font-weight: 300; letter-spacing: 10px;
+            color: #f5e3b2; text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+            text-transform: uppercase; font-size: 24px;
+        }
+
+        /* Du’a and credit – perfectly centred, responsive */
+        .dua-wrapper {
+            position: absolute;
+            top: 58%;                     /* adjust this to move the whole block up/down */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+            width: 90%;                   /* prevents text touching screen edges on mobile */
+            max-width: 600px;
+        }
+
+        .dua-text {
+            color: #f5e3b2;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 5px;
+            margin: 0 0 8px 0;           /* space before the credit */
+            line-height: 1.4;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .credit {
+            color: #fcb900;
+            font-family: serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin: 0;          /* optional – gives a personal touch */
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+        }
+
+        /*=====Sheep Image adjustment=====*/
+        .shep {
+            position: absolute;
+            bottom: 6%;             /* a little above the grass edge */
+            right: 10%;             /* distance from the right side */
+            z-index: 2;
+        }
+
+        .shep img {
+            width: 200px;           
+            height: 200px;
+        }
+
+        /* ===== Keyframes ===== */
+        @keyframes goUp {
+            0%   { transform: translateY(0); }
+            100% { transform: translateY(-22px); }
+        }
+        @keyframes goDown {
+            0%   { transform: translateY(0); }
+            100% { transform: translateY(22px); }
+        }
+        @keyframes fadeIn {                  /* fixed “keyframes” */
+            0%   { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!--Lanterns-->
+      <div class="lantern-container">
+    <svg width="100%" viewBox="0 0 700 160" preserveAspectRatio="xMidYMid meet"
+         xmlns="http://www.w3.org/2000/svg">
+
+      <defs>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- Rope line across top -->
+      <line x1="0" y1="0" x2="700" y2="0" stroke="#5a3a1a" stroke-width="1.5"/>
+
+      <!-- Hanging strings -->
+      <line x1="100" y1="0" x2="100" y2="88" stroke="#5a3a1a" stroke-width="0.8"/>
+      <line x1="220" y1="0" x2="220" y2="98" stroke="#5a3a1a" stroke-width="0.8"/>
+      <line x1="360" y1="0" x2="360" y2="83" stroke="#5a3a1a" stroke-width="0.8"/>
+      <line x1="500" y1="0" x2="500" y2="93" stroke="#5a3a1a" stroke-width="0.8"/>
+      <line x1="620" y1="0" x2="620" y2="106" stroke="#5a3a1a" stroke-width="0.8"/>
+
+      <!-- Lantern 1 - Red -->
+      <g filter="url(#glow)">
+        <!-- Body -->
+        <rect x="84" y="88" width="32" height="44" rx="4" fill="#c0392b" opacity="0.9"/>
+        <rect x="84" y="88" width="32" height="44" rx="4" fill="none" stroke="#e74c3c" stroke-width="0.5"/>
+        <!-- Inner glow panel -->
+        <rect x="88" y="94" width="24" height="32" rx="2" fill="#e74c3c" opacity="0.4"/>
+        <!-- Candle stick -->
+        <rect x="97" y="130" width="6" height="8" rx="1" fill="#f39c12"/>
+        <!-- Flame -->
+        <ellipse cx="100" cy="140" rx="4" ry="6" fill="#f39c12" opacity="0.85"/>
+        <!-- Star decoration -->
+        <text x="100" y="112" text-anchor="middle" font-size="10" fill="#f5e3b2" font-family="serif">✦</text>
+      </g>
+
+      <!-- Lantern 2 - Green -->
+      <g filter="url(#glow)">
+        <rect x="204" y="98" width="32" height="44" rx="4" fill="#1a6b3a" opacity="0.9"/>
+        <rect x="204" y="98" width="32" height="44" rx="4" fill="none" stroke="#27ae60" stroke-width="0.5"/>
+        <rect x="208" y="104" width="24" height="32" rx="2" fill="#27ae60" opacity="0.4"/>
+        <rect x="217" y="140" width="6" height="8" rx="1" fill="#f39c12"/>
+        <ellipse cx="220" cy="150" rx="4" ry="6" fill="#f39c12" opacity="0.85"/>
+        <text x="220" y="122" text-anchor="middle" font-size="10" fill="#f5e3b2" font-family="serif">✦</text>
+      </g>
+
+      <!-- Lantern 3 - Gold -->
+      <g filter="url(#glow)">
+        <rect x="344" y="83" width="32" height="44" rx="4" fill="#6b4c11" opacity="0.9"/>
+        <rect x="344" y="83" width="32" height="44" rx="4" fill="none" stroke="#f39c12" stroke-width="0.5"/>
+        <rect x="348" y="89" width="24" height="32" rx="2" fill="#f39c12" opacity="0.4"/>
+        <rect x="357" y="125" width="6" height="8" rx="1" fill="#f39c12"/>
+        <ellipse cx="360" cy="135" rx="4" ry="6" fill="#f5c842" opacity="0.9"/>
+        <text x="360" y="107" text-anchor="middle" font-size="10" fill="#f5e3b2" font-family="serif">✦</text>
+      </g>
+
+      <!-- Lantern 4 - Blue -->
+      <g filter="url(#glow)">
+        <rect x="484" y="93" width="32" height="44" rx="4" fill="#1a3a6b" opacity="0.9"/>
+        <rect x="484" y="93" width="32" height="44" rx="4" fill="none" stroke="#3498db" stroke-width="0.5"/>
+        <rect x="488" y="99" width="24" height="32" rx="2" fill="#3498db" opacity="0.4"/>
+        <rect x="497" y="135" width="6" height="8" rx="1" fill="#f39c12"/>
+        <ellipse cx="500" cy="145" rx="4" ry="6" fill="#f39c12" opacity="0.85"/>
+        <text x="500" y="117" text-anchor="middle" font-size="10" fill="#f5e3b2" font-family="serif">✦</text>
+      </g>
+
+      <!-- Lantern 5 - Red -->
+      <g filter="url(#glow)">
+        <rect x="604" y="106" width="32" height="44" rx="4" fill="#c0392b" opacity="0.9"/>
+        <rect x="604" y="106" width="32" height="44" rx="4" fill="none" stroke="#e74c3c" stroke-width="0.5"/>
+        <rect x="608" y="112" width="24" height="32" rx="2" fill="#e74c3c" opacity="0.4"/>
+        <rect x="617" y="148" width="6" height="8" rx="1" fill="#f39c12"/>
+        <ellipse cx="620" cy="158" rx="4" ry="6" fill="#f39c12" opacity="0.85"/>
+        <text x="620" y="130" text-anchor="middle" font-size="10" fill="#f5e3b2" font-family="serif">✦</text>
+      </g>
+
+    </svg>
+  </div>
+
+    <div class="moon"></div>
+
+    <div class="mosque">
+        <img src="mosque.png" alt="mosque">
+        <div class="lights"></div>
+    </div>
+
+    <div class="grass">
+        
+    </div>
+
+    <div class="main-text">
+        <div class="top">
+            <p>EID</p>
+        </div>
+        <div class="bottom">
+            <p>EID</p>
+        </div>
+        <div class="subtext">
+            <p>ul Azha Mubarak</p>
+        </div>
+    </div>
+    <div class="dua-wrapper">
+        <p class="dua-text">May Allah accept our sacrifice and bless upon us.</p>
+        <p class="credit">From: Fizza Hameed</p>
+        <p class="credit">AI Engineer</p>
+    </div>
+
+    <div class="shep">
+        <img src="sheep1.png">
+    </div>
+
+    <!--For eid text motion-->
+<script>
+    (function() {
+        const mainText = document.querySelector('.main-text');
+
+        function startCycle() {
+            // Initial split after 5 seconds
+            setTimeout(() => {
+                mainText.classList.add('split');
+
+                // Then alternate merge and split every 10 seconds
+                setInterval(() => {
+                    mainText.classList.toggle('split');
+                }, 10000);   // 10 seconds between toggles
+
+            }, 5000);
+        }
+
+        startCycle();
+    })();
+</script>
+
+  <script>
+        // Generate twinkling stars
+window.addEventListener('DOMContentLoaded', () => {
+    const numStars = 700;
+    const sky = document.createElement('div');
+    sky.style.position = 'fixed';
+    sky.style.inset = '0';
+    sky.style.pointerEvents = 'none';
+    sky.style.zIndex = '0';               // ← changed from -1 to 0
+    document.body.appendChild(sky);
+
+    for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        const size = Math.random() * 3 + 1;
+        Object.assign(star.style, {
+            position: 'absolute',
+            width: size + 'px',
+            height: size + 'px',
+            backgroundColor: 'white',
+            borderRadius: '50%',
+            left: Math.random() * window.innerWidth + 'px',
+            top: Math.random() * window.innerHeight + 'px',
+            animation: `twinkle ${Math.random() * 3 + 2}s infinite`,
+            animationDelay: Math.random() * 3 + 's'
+        });
+        sky.appendChild(star);
+    }
+});
+    </script>
+
+    <style>
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+    </style>
+
+</body>
+</html>
